@@ -3,41 +3,28 @@
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>kkFileView版本记录</title>
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/viewer.min.css"/>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css"/>
     <link rel="stylesheet" href="css/theme.css"/>
     <script type="text/javascript" src="js/jquery-3.6.1.min.js"></script>
-    <script type="text/javascript" src="js/jquery.form.min.js"></script>
     <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 </head>
 
 <body>
 
-<!-- Fixed navbar -->
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                    aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
             <a class="navbar-brand" href="https://kkview.cn" target='_blank'>kkFileView</a>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li><a href="./index">首页</a></li>
-                <li><a href="./integrated">接入说明</a></li>
-                <li class="active"><a href="./record">版本发布记录</a></li>
-                <li><a href="./sponsor">赞助开源</a></li>
-            </ul>
-        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="./index">首页</a></li>
+            <li><a href="./integrated">接入说明</a></li>
+            <li class="active"><a href="./record">版本发布记录</a></li>
+            <li><a href="./sponsor">赞助开源</a></li>
+        </ul>
     </div>
 </nav>
 
@@ -46,27 +33,105 @@
     <div class="page-header">
         <h1>版本发布记录</h1>
     </div>
-    <div class="panel panel-success">
+     <div class="panel panel-success">
         <div class="panel-heading">
-            <h3 class="panel-title">2023年07月10日，v4.4.0版本迭代开启 </h3>
+            <h3 class="panel-title">2025年01月16日，v4.4.0版本</h3>
         </div>
         <div class="panel-body">
             <div>
-                1. ofd修复部分已知问题. <br>
-                2. 更新xlsx前端解析组件 <br>
-                3. 修复 forceUpdatedCache 属性设置，但是本地缓存文件不更新缺陷 <br>
-                4. 配置文件新增启用 GZIP压缩 <br>
-                5. CAD格式新增支持 转换成svg tif 格式 <br>
-                6. CAD 转换新增 超时结束 新增线程管理 <br>
-                7. 删除功能 新增验证码方法 <br> 
-                8. 升级 CAD转换组件 <br> 
-                9. office 功能调整 支持批注 转换页码限制 生成水印等等 <br> 
-                10.新增xbrl格式 <br> 
-                11.修复PDF解密加密文件 转换成功后台报错问题  <br> 
-                12.支持 301重定向 及文件名被编码 <br> 
-                13.其他功能优化及已知问题修复 <br>
+                <h4>优化</h4>
+                1. 优化 OFD 移动端预览 页面不自适应  <br>
+                2. 更新 xlsx 前端解析组件，加速解析速度  <br>
+                3. 升级 CAD 组件  <br>
+                4. office 功能调整，支持批注、转换页码限制、生成水印等功能  <br>
+                5. 升级 markdown 组件  <br>
+                6. 升级 dcm 解析组件  <br>
+                7. 升级 PDF.JS 解析组件  <br>
+                8. 更换视频播放插件为 ckplayer  <br>
+                9. tif 解析更加智能化，支持被修改的图片格式  <br>
+                10. 针对大小文本文件检测字符编码的正确率，处理并发隐患  <br>
+                11. 重构下载文件的代码，新增通用的文件服务器认证访问的设计  <br>
+                12. 更新 bootstrap 组件，并精简掉不需要的文件  <br>
+                13. 更新 epub 版本，优化 epub 显示效果  <br>
+                14. 解决定时清除缓存时，对于多媒体类型文件，只删除了磁盘缓存文件  <br>
+                15. 自动检测已安装 Office 组件，增加 LibreOffice 7.5 & 7.6 版本默认路径  <br>
+                16. 修改 drawio 默认为预览模式  <br>
+                17. 新增 PDF 线程管理、超时管理、内存缓存管理，更新 PDF 解析组件版本  <br>
+                18. 优化 Dockerfile，支持真正的跨平台构建镜像  <br>
+                <br>
+                <h4>新增</h4>
+                1. xlsx 新增支持打印功能  <br>
+                2. 配置文件新增启用 GZIP 压缩  <br>
+                3. CAD 格式新增支持转换成 SVG 和 TIF 格式，新增超时结束、线程管理  <br>
+                4. 新增删除文件使用验证码校验  <br>
+                5. 新增 xbrl 格式预览支持  <br>
+                6. PDF 预览新增控制签名、绘图、插图控制、搜索定位页码、定义显示内容等功能  <br>
+                7. 新增 CSV 格式前端解析支持  <br>
+                8. 新增 ARM64 下的 Docker 镜像支持  <br>
+                9. 新增 Office 预览支持转换超时属性设置功能  <br>
+                10. 新增预览文件 host 黑名单机制  <br>
+                <br>
+                <h4>修复</h4>
+                1. 修复 forceUpdatedCache 属性设置，但本地缓存文件不更新的问题  <br>
+                2. 修复 PDF 解密加密文件转换成功后后台报错的问题  <br>
+                3. 修复 BPMN 不支持跨域的问题  <br>
+                4. 修复压缩包二级反代特殊符号错误问题  <br>
+                5. 修复视频跨域配置导致视频无法预览的问题  <br>
+                6. 修复 TXT 文本类分页二次加载问题  <br>
+                7. 修复 Drawio 缺少 Base64 组件的问题  <br>
+                8. 修复 Markdown 被转义问题  <br>
+                9. 修复 EPUB 跨域报错问题  <br>
+                10. 修复 URL 特殊符号问题  <br>
+                11. 修复压缩包穿越漏洞  <br>
+                12. 修复压缩获取路径错误、图片合集路径错误、水印问题等 BUG  <br>
+                13. 修复前端解析 XLSX 包含 EMF 格式文件错误问题  <br>
             </div>
         </div>
+    </div>   
+    
+    
+    <div class="panel panel-success">
+        <div class="panel-heading">
+            <h3 class="panel-title">2024年04月15日，v4.4.0-beta版本</h3>
+        </div>
+        <div class="panel-body">
+            <div>
+                1. ofd修复部分已知问题.优化OFD 移动端预览 页面不自适应 <br>
+                2. 更新xlsx前端解析组件,新增支持打印功能,加速解析速度 <br>
+                3. 修复 forceUpdatedCache 属性设置，但是本地缓存文件不更新缺陷 <br>
+                4. 配置文件新增启用 GZIP压缩 <br>
+                5. 升级CAD组件,CAD格式新增支持 转换成svg tif 格式 新增 超时结束 新增线程管理 <br>
+                6. 删除功能 新增验证码方法 <br>
+                7. office 功能调整 支持批注 转换页码限制 生成水印等等 <br>
+                8. 新增xbrl格式 <br>
+                9. 修复PDF解密加密文件 转换成功后台报错问题 <br>
+                10. 升级markdown组件 修复markdown被转义问题 <br>
+                11. 升级dcm 解析组件 <br>
+                12. 升级PDF.JS解析组件 新增:控制签名/绘图/插图控制方法 <br>
+                13. 更换视频播放插件为ckplayer <br>
+                14. tif解析更加智能化 支持被修改的图片格式 <br>
+                15. 修复bpmn不支持跨域的问题 <br>
+                16. 修复压缩包二级反代特殊符号错误问题 <br>
+                17. 首页新增 搜索 定位页码 定义显示多少内容 <br>
+                18. 修复video跨域配置导致视频无法预览问题 <br>
+                19. 针对大小文本文件检测字符编码的正确率;处理并发隐患 <br>
+                20. 修复txt文本类 分页二次加载问题 <br>
+                21. 新增csv格式前端解析 <br>
+                22. 重构下载文件的代码，新增通用的文件服务器认证访问的设计 <br>
+                23. 更新bootstrap组件 并精简掉不需要的文件 <br>
+                24. 新增arm64下的dockerfile <br>
+                25. 更新epub版本,优化epub显示效果,修复epub 跨域报错问题 <br>
+                26. 修复drawio缺少base64组件的问题 <br>
+                27. 解决定时清除缓存时，对于多媒体类型文件，只删除了磁盘缓存文件 <br>
+                28. 自动检测已安装Office组件增加LibreOffice7.5 & 7.6 版本默认路径  <br>
+                29. 修改drawio默认为预览模式  <br>
+                30. 新增office转换超时属性功能  <br>
+                31. 新增预览文件 host 黑名单机制  <br>
+                32. 修复 url特殊符号问题  <br>
+                33. 其他功能优化及已知问题修复 <br>
+            </div>
+        </div>
+    </div>
     <div class="panel panel-success">
         <div class="panel-heading">
             <h3 class="panel-title">2023年07月04日，v4.3.0版本</h3>
@@ -95,9 +160,10 @@
                 20. 其他功能优化及已知问题修复 <br>
             </div>
         </div>
+    </div>
     <div class="panel panel-success">
         <div class="panel-heading">
-            <h3 class="panel-title">2023年04月18日，v4.2.1 版本</h3>
+            <h3 class="panel-title">2023年04月18日，v4.2.1版本</h3>
         </div>
         <div class="panel-body">
             <div>
@@ -107,7 +173,7 @@
     </div>
     <div class="panel panel-success">
         <div class="panel-heading">
-            <h3 class="panel-title">2023年04月13日，v4.2.0 版本</h3>
+            <h3 class="panel-title">2023年04月13日，v4.2.0版本</h3>
         </div>
         <div class="panel-body">
             <div>
@@ -148,7 +214,7 @@
     </div>
     <div class="panel panel-success">
         <div class="panel-heading">
-            <h3 class="panel-title">2022年12月14日，v4.1.0 版本</h3>
+            <h3 class="panel-title">2022年12月14日，v4.1.0版本</h3>
         </div>
         <div class="panel-body">
             <div>
@@ -167,7 +233,7 @@
     </div>
     <div class="panel panel-success">
         <div class="panel-heading">
-            <h3 class="panel-title">2021年7月6日，v4.0.0 版本</h3>
+            <h3 class="panel-title">2021年7月6日，v4.0.0版本</h3>
         </div>
         <div class="panel-body">
             <div>
@@ -184,12 +250,11 @@
     </div>
     <div class="panel panel-success">
         <div class="panel-heading">
-            <h3 class="panel-title">2021年6月17日，v3.6.0版本</h3>
+            <h3 class="panel-title">2021年06月17日，v3.6.0版本</h3>
         </div>
         <div class="panel-body">
             <div>
-                ** ofd 类型文件支持版本，本次版本重要功能均由社区开发贡献，感谢 @gaoxingzaq、@zhangxiaoxiao9527 的代码贡献
-                **<br>
+                ** ofd 类型文件支持版本，本次版本重要功能均由社区开发贡献，感谢 @gaoxingzaq、@zhangxiaoxiao9527 的代码贡献 ** <br>
                 1. 新增 ofd 类型文件预览支持，ofd 是国产的类似 pdf 格式的文件<br>
                 2. 新增了 ffmpeg 视频文件转码预览支持，打开转码功能后，理论上支持所有主流视频的预览，如 rm、rmvb、flv 等<br>
                 3. 美化了 ppt、pptx 类型文件预览效果，比之前版本好看太多<br>
@@ -199,7 +264,43 @@
     </div>
     <div class="panel panel-success">
         <div class="panel-heading">
-            <h3 class="panel-title">2021年1月28日</h3>
+            <h3 class="panel-title">2021年04月06日，v3.5.1版本</h3>
+        </div>
+        <div class="panel-body">
+            <div>
+                3.5.1版本发布，修复已知问题<br>
+                1. 修复 tif、tiff 文件预览初始内存太小预览失败的问题<br>
+                2. 修复PDF预览模式跨域问题<br>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-success">
+        <div class="panel-heading">
+            <h3 class="panel-title">2021年03月17日，v3.5.0版本</h3>
+        </div>
+        <div class="panel-body">
+            <div>
+                2021 一季度 v3.5 性能升级版发布<br>
+                1.  新增 office-plugin 转换进程、任务超时可配置<br>
+                2.  更新 spring-boot 到最新的 v2.4.2 版本<br>
+                3.  新增 tiff 、tif 图像文件格式预览支持<br>
+                4.  新增依赖 highlightjs 代码文件预览高亮支持<br>
+                5.  新增 wps 文档预览支持<br>
+                6.  新增 stars 增长趋势图<br>
+                7.  新增启动完成，打印启动耗时、演示页访问地址<br>
+                8.  新增 kkFIleView 的 banner 信息<br>
+                9.  优化启动脚本<br>
+                10. 优化项目结构、优化 maven 结构<br>
+                11. 移除多余的 repositories 配置，移除针对 tomcat 的配置<br>
+                12. 优化下载文件 io 操作<br>
+                13. 修复：优化项目目录结构之后，windows下启动报错“找不到office组件”<br>
+                14. 修复：jodd.io.NetUtil.downloadFile下载大于16M文件报错问题<br>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-success">
+        <div class="panel-heading">
+            <h3 class="panel-title">2021年1月28日，v3.3.1版本</h3>
         </div>
         <div class="panel-body">
             <div>
@@ -228,7 +329,7 @@
     </div>
     <div class="panel panel-success">
         <div class="panel-heading">
-            <h3 class="panel-title">2020年12月27日</h3>
+            <h3 class="panel-title">2020年12月27日，v3.3.0版本</h3>
         </div>
         <div class="panel-body">
             <div>
@@ -254,7 +355,21 @@
     </div>
     <div class="panel panel-success">
         <div class="panel-heading">
-            <h3 class="panel-title">2020年05月20日</h3>
+            <h3 class="panel-title">2020年08月12日，v2.2.1版本</h3>
+        </div>
+        <div class="panel-body">
+            <div>
+                1. 支持纯文本预览原样格式输出<br>
+                2. 修复PDF预览出现文字缺失异常，升级pdf.js组件<br>
+                3. docker镜像底层使用ubuntu，镜像体积更小、构建更快<br>
+                4. 预览接口同时支持get和post请求<br>
+                5. 修复上传到demo中的压缩文件预览异常<br>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-success">
+        <div class="panel-heading">
+            <h3 class="panel-title">2020年05月20日，v2.2.0版本</h3>
         </div>
         <div class="panel-body">
             <div>
@@ -279,7 +394,7 @@
     </div>
     <div class="panel panel-success">
         <div class="panel-heading">
-            <h3 class="panel-title">2019年06月18日</h3>
+            <h3 class="panel-title">2019年06月20日</h3>
         </div>
         <div class="panel-body">
             <div>
@@ -358,7 +473,6 @@
             </div>
         </div>
     </div>
-</div>
 </div>
 </body>
 </html>
